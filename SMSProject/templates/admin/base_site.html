@@ -1,16 +1,9 @@
 {% extends "admin/base.html" %}
-{% load i18n %}
 
-{% block title %}YOUR WEB TITLE{%  endblock %}
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
 
 {% block branding %}
-<h1 id="site-name">Your Site Name</h1>
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Communication') }}</a></h1>
 {% endblock %}
-{% block extrahead %}
-    <style type="text/css">
-        #header #branding h1{
-                background: None;  // here you remove the django image
 
-        }
-    </style>
-{% endblock %}
+{% block nav-global %}{% endblock %}
