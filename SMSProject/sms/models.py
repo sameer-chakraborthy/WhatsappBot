@@ -7,6 +7,7 @@ class Table(models.Model):
 	product = models.CharField(max_length=200)
 	mobile = models.CharField(max_length=200)
 	amount = models.CharField(max_length=200)
+	created = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
 		return self.name
