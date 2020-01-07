@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import date
+from datetime import datetime
 
 # Create your models here.
 class Table(models.Model):
@@ -8,7 +8,7 @@ class Table(models.Model):
 	product = models.CharField(max_length=200)
 	mobile = models.CharField(max_length=200)
 	amount = models.CharField(max_length=200)
-	created = models.DateTimeField(auto_now_add=True,default=date.now())
+	created = models.DateTimeField(auto_now_add=True,default=datetime.now())
 
 	def __str__(self):
 		return self.name
